@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+	<base href="file:///D:/UIUX-jongsuk/person_project/" target="_self" />
+
+    <style>
+    /*reset*/
+    *{margin:0 auto; padding:0}
+    ul,ol{list-style:none;}
+    body{font-size:13px; font-family:Dotum,'돋움',Helvetica,AppleSDGothicNeo,sans-serif}
+    a{text-decoration:none; }
+
+/*top*/
+.top{border:0px #f00 solid; height:250px; background-image:url("lib/images/top_backbg.gif");}
+.top .bar{border:0px #f00 solid; height:40px; width:980px;}
+.ir{
+      font-size:0;
+      position:absolute;
+      left:-9999999px;
+      top:-999999px;
+      overflow:hidden;
+      width: 0;
+      height: 0;
+    }
+    fieldset{border:0 none;}
+
+
+    .bar fieldset{float:right}
+    .bar fieldset input[type="text"]{
+      line-height:23px;
+      width: 250px;
+      padding:0 10px;
+      margin:9px 10px;
+      vertical-align: middle;
+      border:0 none;
+      border-left:1px #666 solid;
+      border-top:1px #666 solid;
+    }
+
+    .bar fieldset input[type="submit"]{
+      height:47px;
+      width: 107px;
+      border:1px #000 solid;
+      border-top:0 none;
+      vertical-align: top;
+      background-image:url("lib/images/top_search.gif");
+    }
+    .top .menu{border:0px #000 solid; width:980px; overflow:hidden;}
+    .top .menu h1{border:0px #000 solid;margin:43px 0 23px;}
+    .menu>ul>li{border:0px #f00 solid; float:left; margin-right:50px;  line-height:40px}
+    .menu>ul>li>div{border:0px #000 solid; position:absolute;  display: none; }
+    .menu>ul>li>div>ul>li{float:left; margin-right:30px; line-height:40px}
+    .menu>ul>li>div>ul{position:relative; }
+
+    .menu>ul>li:nth-child(1)>div>ul{left:0px}
+    .menu>ul>li:nth-child(2)>div>ul{left:100px}
+    .menu>ul>li:nth-child(3)>div>ul{left:110px}
+    .menu>ul>li:nth-child(4)>div>ul{left:120px}
+    .menu>ul>li:nth-child(5)>div>ul{left:130px}
+    .menu>ul>li:hover>div,
+    .menu>ul>li.on>div{display: block}
+
+    .banner{position:relative; margin:0 auto; top:-130px; left:350px;width:270px; height:180px}
+
+    .banner li>div{position:absolute; left:0;top:0}
+    .banner li>div>img{width:100%}
+    .banner li>a{border:0px #000 solid; position:relative; display:block; z-index:1; top:35px; widt:25px; height:25px;float:right; clear:right; }
+    .banner li>a>img{border:0px #000 solid;width:100%}
+/*visual*/
+.visual{border:0px #f00 solid; text-align:center; position:relative;  height:300px; background-image:url("lib/images/main_img.png");}
+.visual div.img{border:0px #f00 solid; position:absolute; left:-50px; top:0; right:0; width:1400px; margin-top:0px}
+.visual div.img_contents{border:0px #000 solid; position:absolute; display:block; width:350px; left:630px; top:0; right:0; margin-top:0px}
+/*contents*/
+.contents{border:0px #000 solid; height:449px;  background-image:url("lib/images/creator_back_bg.gif"); }
+
+.contents .hot_photo{border:0px #000 solid;  float:left;}
+.contents .contents_add{border:0px #00f solid; width:980px; overflow:hidden;}
+.photo{margin-top:20px}
+.photo ul li{border:0px #f00 solid;float:left; width:165px;  text-align:center; font-size:12px;color:#888;}
+.photo .hot .strong{list-style:strong;}
+.photo span{width:165px; height:130px; overflow:hidden;}
+.photo span>img{width:100%; margin-top:0}
+.photo .hot{margin-right:8px;}
+.photo2>h2>img{margin-top:15px;}
+.photo .hot>ul>li:first-child{margin-bottom:5px;}
+
+.contents .hot_vd{border:1px #000 solid; width:264x; margin-left:695px; }
+.contents .hot_vd .vd{border:1px #f00 solid;}
+.contents .hot_vd .slide_vd{border:1px #f00 solid;}
+/*contents2*/
+.contents2{border:1px #00b2c7 solid; width:980px;overflow:hidden; }
+.contents2 .slide{border:1px #00b2c7 solid; float:left; width:360px;}
+.contents2 .photo{border:1px #00b2c7 solid; margin-left:380px;  overflow:hidden; }
+.contents2 .photo>ul{width:750px;}
+.contents2 .photo>ul>li{border:1px #00b2c7 solid; float:left; width:135px; margin-right:17px}
+.photo div{border:1px #f00 solid; width:135px; height:140px; margin:0}
+.photo div>img{width:100%}
+
+/*bunch*/
+.bunch{border:1px #000 solid; height:95px; background-color:#e7e7e7; border-top:1px #dedede solid;}
+.bunch>div{border:1px #000 solid; vertical-align:middle; width:980px;  position:relative;}
+.bunch>div>div{border:1px #000 solid;float:left; margin-right:20px; }
+
+/*footer*/
+.footer .bunch ul li{float:left; margin-right:20px; }
+address{background-color:#12151f; height:58px; color:#fff;}
+address .listNone li{float:left; margin-right:15px;list-style: none; }
+address .listNone li a{color:#fff }
+
+    </style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="top">
+
+        <div class="bar">
+         <fieldset>
+           <legend class="ir">검색</legend>
+             <label for="search"></label>
+             <input type="text" id="search"/><input type="submit"  value=""/>
+         <fieldset>
+         </div>
+
+<div class="menu">
+    <h1><img src="lib/images/logo.png" alt="로고"/></h1>
+    <ul>
+    <li class="on"><a href=""><img src="lib/images/topmenu1.png" alt="메뉴"/></a>
+      <div>
+        <ul>
+        <li><img src="lib/images/2depth_1.gif" alt="메뉴"/></li>
+        <li><img src="lib/images/2depth_2.gif" alt="메뉴"/></li>
+        <li><img src="lib/images/2depth_3.gif" alt="메뉴"/></li>
+        <li><img src="lib/images/2depth_4.gif" alt="메뉴"/></li>
+      </ul>
+      </div>
+      </li>
+    <li><a href=""><img src="lib/images/topmenu2.png" alt="메뉴"/></a>
+        <div>
+        <ul>
+          <li><img src="lib/images/2depth_1.gif" alt="메뉴"/></li>
+          <li><img src="lib/images/2depth_2.gif" alt="메뉴"/></li>
+          <li><img src="lib/images/2depth_3.gif" alt="메뉴"/></li>
+          <li><img src="lib/images/2depth_4.gif" alt="메뉴"/></li>
+        </ul>
+        </div>
+    </li>
+    <li><a href=""><img src="lib/images/topmenu3.png" alt="메뉴"/></a>
+        <div>
+        <ul>
+          <li><img src="lib/images/2depth_1.gif" alt="메뉴"/></li>
+          <li><img src="lib/images/2depth_2.gif" alt="메뉴"/></li>
+          <li><img src="lib/images/2depth_3.gif" alt="메뉴"/></li>
+          <li><img src="lib/images/2depth_4.gif" alt="메뉴"/></li>
+        </ul>
+        </div>
+    </li>
+    <li><a href=""><img src="lib/images/topmenu4.png" alt="메뉴"/></a>
+        <div>
+        <ul>
+          <li><img src="lib/images/2depth_1.gif" alt="메뉴"/></li>
+          <li><img src="lib/images/2depth_2.gif" alt="메뉴"/></li>
+          <li><img src="lib/images/2depth_3.gif" alt="메뉴"/></li>
+          <li><img src="lib/images/2depth_4.gif" alt="메뉴"/></li>
+        </ul>
+        </div>
+    </li>
+    <li><a href=""><img src="lib/images/topmenu5.png" alt="메뉴"/></a>
+        <div>
+        <ul>
+          <li><img src="lib/images/2depth_1.gif" alt="메뉴"/></li>
+          <li><img src="lib/images/2depth_2.gif" alt="메뉴"/></li>
+          <li><img src="lib/images/2depth_3.gif" alt="메뉴"/></li>
+          <li><img src="lib/images/2depth_4.gif" alt="메뉴"/></li>
+        </ul>
+        </div>
+    </li>
+    </ul>
+    </div>
+
+    <div class="banner">
+        <ul>
+        <li >
+            <a href="#"><img src="lib/images/top_event_icon.png" alt="" /></a>
+            <div><img src="lib/images/event_img1.gif" alt="" /></div>
+        </li>
+        <li>
+            <a href="#"><img src="lib/images/top_event_icon.png" alt="" /></a>
+            <div><img src="lib/images/event_img1.gif" alt="" /></div>
+        </li>
+        <li>
+            <a href="#"><img src="lib/images/top_event_icon.png" alt="" /></a>
+            <div><img src="lib/images/event_img1.gif" alt="" /></div>
+        </li>
+        </ul>
+    </div>
+
+    </div>
+    <div class="visual">
+        <div  class="img"><img src="lib/images/main_img.png" alt="" /></div>
+        <div class="img_contents"><img src="lib/images/main_img_title.png" alt="" /></div>
+    </div>
+    <div class="contents">
+        <div class="contents_add">
+        <div  class="hot_photo">
+
+            <div class="photo">
+                <h2><img src="lib/images/contents_title1.png" alt="" /></h2>
+                <ul>
+                    <li class="hot" >
+                        <ul>
+                            <li><span><img src="lib/images/contents_img1.png" alt="" /></span></li>
+                            <li class="strong">[Fatdoo]</li>
+                            <li>사랑은 음악을 타고 총총</li>
+                        </ul>
+                    </li>
+                    <li class="hot" >
+                        <ul>
+                            <li><span><img src="lib/images/contents_img2.png" alt="" /></span></li>
+                            <li>[Fatdoo]</li>
+                            <li>사랑은 음악을 타고 총총</li>
+                        </ul>
+                    </li>
+                    <li class="hot" >
+                        <ul>
+                            <li><span><img src="lib/images/contents_img3.png" alt="" /></span></li>
+                            <li>[Fatdoo]</li>
+                            <li>사랑은 음악을 타고 총총</li>
+                        </ul>
+                    </li>
+                    <li class="hot" >
+                        <ul>
+                            <li><span><img src="lib/images/contents_img4.png" alt="" /></span></li>
+                            <li>[Fatdoo]</li>
+                            <li>사랑은 음악을 타고 총총</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="photo photo2">
+                <h2><img src="lib/images/contents_title2.png" alt="" /></h2>
+                <ul>
+                    <li class="hot" >
+                        <ul>
+                            <li><span><img src="lib/images/contents_img5.png" alt="" /></span></li>
+                            <li>[Fatdoo]</li>
+                            <li>사랑은 음악을 타고 총총</li>
+                        </ul>
+                    </li>
+                    <li class="hot" >
+                        <ul>
+                            <li><span><img src="lib/images/contents_img6.png" alt="" /></span></li>
+                            <li>[Fatdoo]</li>
+                            <li>사랑은 음악을 타고 총총</li>
+                        </ul>
+                    </li>
+                    <li class="hot" >
+                        <ul>
+                            <li><span><img src="lib/images/contents_img7.png" alt="" /></span></li>
+                            <li>[Fatdoo]</li>
+                            <li>사랑은 음악을 타고 총총</li>
+                        </ul>
+                    </li>
+                    <li class="hot" >
+                        <ul>
+                            <li><span><img src="lib/images/contents_img8.png" alt="" /></span></li>
+                            <li>[Fatdoo]</li>
+                            <li>사랑은 음악을 타고 총총</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div  class="hot_vd">
+            <div class="vd">
+                <h2><img src="lib/images/contents_title_vd.png" alt="" /></h2>
+                <ul>
+                    <li><span><img src="lib/images/vd.gif" alt="" /></span></li>
+                    <li>Video Clip’s Name Video Clip’s Name Video Clip’s Name...!!!</li>
+                </ul>
+            </div>
+
+            <div class-"slide_vd">hhhh
+            </div>
+        </div>
+
+</div>
+
+    </div>
+<div  class="contents2">
+
+    <div class="slide">
+        <h2><img src="lib/images/nav_title1.gif" alt="" /></h2>
+        <ul>
+        <li>ss</li>
+        </ul>
+    </div>
+
+
+
+        <div class="photo">
+            <h2><img src="lib/images/nav_title2.png" alt="" /></h2>
+            <ul>
+                <li>
+                    <div><img src="lib/images/nav_img1.png" alt="" /></div>
+                    <p><sapn>2013 유나이티드 큐브</span><br/>
+                    잠실실내체육관</p>
+                    <p>2013/10/10</p>
+                </li>
+                <li>
+                    <div><img src="lib/images/nav_img2.png" alt="" /></div>
+                    <p><sapn>2013 유나이티드 큐브</span><br/>
+                    잠실실내체육관</p>
+                    <p>2013/10/10</p>
+                </li>
+                <li>
+                    <div><img src="lib/images/nav_img3.png" alt="" /></div>
+                    <p><sapn>2013 유나이티드 큐브</span><br/>
+                    잠실실내체육관</p>
+                    <p>2013/10/10</p>
+                </li>
+                <li>
+                    <div><img src="lib/images/nav_img4.gif" alt="" /></div>
+                    <p><sapn>2013 유나이티드 큐브</span><br/>
+                    잠실실내체육관</p>
+                    <p>2013/10/10</p>
+                </li>
+                <li>
+                    <div><img src="lib/images/nav_img5.png" alt="" /></div>
+                    <p><sapn>2013 유나이티드 큐브</span><br/>
+                    잠실실내체육관</p>
+                    <p>2013/10/10</p>
+                </li>
+                <li>
+                    <div><img src="lib/images/nav_img6.png" alt="" /></div>
+                    <p><sapn>2013 유나이티드 큐브</span><br/>
+                    잠실실내체육관</p>
+                    <p>2013/10/10</p>
+                </li>
+                <li>
+                    <div><img src="lib/images/nav_img7.png" alt="" /></div>
+                    <p><sapn>2013 유나이티드 큐브</span><br/>
+                    잠실실내체육관</p>
+                    <p>2013/10/10</p>
+                </li>
+                <li>
+                    <div><img src="lib/images/nav_img8.gif" alt="" /></div>
+                    <p><sapn>2013 유나이티드 큐브</span><br/>
+                    잠실실내체육관</p>
+                    <p>2013/10/10</p>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+<div class="footer">
+        <div class="bunch">
+            <strong>Talent Association</strong><span>Korean Culture를 만들어 가는 것은 여러분입니다. 다양한 분야의 단체들이 한국의 문화를 후원합니다</span>
+            <button class="next"><img src="lib/images/bunch_lefticon.gif" alt="" /></button>
+            <button class="prev"><img src="lib/images/bunch_righticon.gif" alt="" /></button>
+
+            <ul>
+                <li><span><img src="lib/images/banner1.gif" alt="" /></span></li>
+                <li><span><img src="lib/images/banner1.gif" alt="" /></span></li>
+                <li><span><img src="lib/images/banner1.gif" alt="" /></span></li>
+                <li><span><img src="lib/images/banner1.gif" alt="" /></span></li>
+                <li><span><img src="lib/images/banner1.gif" alt="" /></span></li>
+                <li><span><img src="lib/images/banner1.gif" alt="" /></span></li>
+            </ul>
+        </div>
+
+        <address>
+            <ul class="listNone">
+                <li><a href="#"><span>회사소개</span></a></li>
+                <li><a href="#"><span>광고</span></a></li>
+                <li><a href="#"><span>검색등록</span></a></li>
+                <li><a href="#"><span>제휴안내</span></a></li>
+                <li><a href="#"><span>이용약관</span></a></li>
+                <li><a href="#"><span>개인정보취급방침</span></a></li>
+                <li><a href="#"><span>고객센터</span></a></li>
+                <li><a href="#"><span>CubeBirdge</span></a></li>
+                <li><a href="#"><span>SiteMap</span></a></li>
+                <li><a href="#"><span>공지사항</span></a></li>
+            </ul>
+            <span class="copy">Copyright &copy; Ocean’s People. All Rights Reserved.</span>
+        </address>
+</div>
+
+</div>
+</body>
+</html>
